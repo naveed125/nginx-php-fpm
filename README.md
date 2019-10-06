@@ -1,5 +1,5 @@
 ## Source
-This is a fork of richarvey/nginx-php-fpm. Made some small changes to it for example added APCu, redis and igbinary support. 
+This is a fork of richarvey/nginx-php-fpm. Made some small changes to it for example added APCu support. Removed maxming geoip stuff. 
 Source is available at: https://github.com/naveed125/nginx-php-fpm
 
 ## Using the image
