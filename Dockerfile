@@ -195,8 +195,11 @@ RUN echo @testing http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repo
     #docker-php-ext-install pdo_mysql pdo_sqlite mysqli mcrypt gd exif intl xsl json soap dom zip opcache && \
     docker-php-ext-install iconv pdo_mysql pdo_sqlite pgsql pdo_pgsql mysqli gd exif intl xsl json soap dom zip opcache && \
     pecl install xdebug-2.7.2 && \
+    pecl install igbinary && \
     pecl install apcu && \
     pecl install -o -f redis && \
+    docker-php-ext-enable igbinary && \
+    echo "apc.serializer=igbinary" >> /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini && \
     docker-php-ext-enable apcu && \
     docker-php-ext-enable redis && \
     docker-php-source delete && \
